@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Деление на секции</title>
+  <style>
+    body {
+      display: grid;
+      grid-template-columns: 1fr 2fr; /* 2 столбца, 1й слева, 2-футер */
+      grid-template-rows: auto auto; /* 2 строки */
+    }
+
+    .section1 {
+      grid-column: 1 / span 1; /* занимает 1 столбец слева */
+      grid-row: 1 / span 2; /* занимает 2 строки слева */
+      background-color: lightblue;
+      padding: 10px;
+      height: 700px;
+      width: 700px;
+    }
+
+    .section2 {
+      grid-column: 2 / span 1; /* занимает 1 столбец справа */
+      grid-row: 1 / span 2; /* занимает 2 строки справа */
+      display: grid;
+      grid-template-rows: 1fr 1fr; /* 2 строки внутри section2 */
+      
+    }
+
+    .sub-section1 {
+      background-color: rgb(185, 91, 185);
+      padding: 10px;
+      height: 445px;
+      width: 1170px;
+    }
+    .sub-section2 {
+      background-color: rgb(50, 70, 187);
+      padding: 10px;
+      height: 445px;
+      width: 1170px;
+    }
+    .footer {
+      grid-column: 1 / span 2; /* растягивается на 2 столбца внизу */
+      grid-row: 2; /* находится в 2 строке */
+      background-color: lightgray;
+      padding: 10px;
+      height: 210px;
+    }
+  </style>
+</head>
+<body>
+  <div class="section1">section1</div>
+  <div class="section2">
+    <div class="sub-section1">section2(up)</div>
+    <div class="sub-section2">section2(down)</div>
+  </div>
+  <div class="footer">Foter</div>
+</body>
+</html>
